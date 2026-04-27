@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrative Assistant Candidates — Summit Pool Works</title>
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=summitpoolworks.com&amp;sz=128" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@300;400;500;600;700;800&family=Tinos:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0D9488;
+      --primary-dark: #0b7e74;
+      --primary-deeper: #09685f;
+      --dark: #131A1B;
+      --highlight: #00F9B8;
+      --bg-light: #2f3536;
+      --bg-subtle: #424849;
+      --bg-page: #111819;
+      --bg-card: #262c2d;
+      --bg-card-hover: #343a3b;
+      --white: #FFFFFF;
+      --text-primary: #ffffff;
+      --text-mid: rgba(255,255,255,0.82);
+      --text-light: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.5);
+      --on-dark: #ffffff;
+      --on-dark-mid: rgba(255,255,255,0.82);
+      --on-dark-light: rgba(255,255,255,0.65);
+      --on-dark-muted: rgba(255,255,255,0.15);
+      --border: rgba(255,255,255,0.14);
+      --border-strong: rgba(255,255,255,0.25);
+      --tag-bg: #0D948833;
+      --tag-color: #56b4ac;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+      --shadow-md: 0 8px 30px rgba(0,0,0,0.5);
+      --radius: 14px;
+      --font-heading: 'Tinos', sans-serif;
+      --font-body: 'Tinos', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Tinos', 'Tinos', sans-serif; font-size: 16px; color: var(--text-dark); background: var(--bg-page); line-height: 1.6; }
+
+    .site-header { background: var(--bg-card); padding: 0 32px; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text-primary); }
+    .header-brand img { height: 32px; width: auto; }
+    .header-divider { width: 1px; height: 28px; background: var(--border); }
+    .header-title { font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--text-primary); opacity: 0.7; letter-spacing: 0.03em; }
+    .header-sagan { display: flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 12px; font-weight: 600; color: var(--text-mid); letter-spacing: 0.03em; text-transform: uppercase; }
+
+    .hero { background: linear-gradient(145deg, var(--dark) 0%, var(--primary-deeper) 40%, var(--primary) 100%); color: var(--white); padding: 72px 32px 64px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, #00F9B81a 0%, transparent 70%); border-radius: 50%; }
+    .hero-eyebrow { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 6px 18px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 22px; color: var(--highlight); }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(30px, 5vw, 48px); font-weight: 800; line-height: 1.15; max-width: 720px; margin: 0 auto 16px; letter-spacing: -0.02em; }
+    .hero-sub { font-size: 18px; color: var(--on-dark-mid); max-width: 620px; margin: 0 auto 36px; font-weight: 400; line-height: 1.6; }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .hero-meta-item { display: flex; align-items: center; gap: 8px; color: var(--on-dark-mid); font-size: 13px; font-weight: 500; }
+    .hero-meta-item svg { width: 16px; height: 16px; }
+    .hero-meta-item strong { color: white; }
+
+    .intro-note { max-width: 900px; margin: -32px auto 0; padding: 0 24px; position: relative; z-index: 10; }
+    .intro-card { background: var(--bg-card); border-radius: var(--radius); padding: 28px 32px; box-shadow: var(--shadow-md); border-left: 4px solid var(--primary); font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+    .intro-card p { margin-bottom: 10px; }
+    .intro-card p:last-child { margin-bottom: 0; }
+
+    .batch-info { text-align: center; margin: 32px 0 8px; }
+    .batch-pill { display: inline-flex; align-items: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 20px; font-size: 13px; color: var(--text-light); }
+    .batch-num { font-weight: 700; color: var(--primary); }
+
+    .batch-switcher { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 8px auto 36px; max-width: 800px; padding: 0 24px; }
+    .batch-switcher[data-count="1"] { display: none; }
+    .batch-btn { display: flex; align-items: center; gap: 8px; padding: 11px 22px; border: 2px solid var(--border); border-radius: 10px; background: var(--bg-card); font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--text-light); cursor: pointer; transition: all 0.2s ease; }
+    .batch-btn:hover { border-color: var(--primary); color: var(--text-primary); }
+    .batch-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .batch-count { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--primary); color: white; font-size: 11px; font-weight: 700; }
+    .batch-btn.active .batch-count { background: var(--highlight); color: var(--dark); }
+    .batch-panel.hidden { display: none; }
+
+    .section-label { text-align: center; padding: 24px 24px 28px; }
+    .section-label h2 { font-family: var(--font-heading); font-size: 26px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+    .section-label p { font-size: 15px; color: var(--text-light); }
+
+    .candidates { max-width: 900px; margin: 0 auto; padding: 0 24px 40px; display: flex; flex-direction: column; gap: 24px; }
+
+    .candidate-card { max-width: 1100px; margin: 0 auto 40px; padding: 0 40px; }
+    .card { background: var(--bg-card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,0,0,0.4); border-color: #0D948833; }
+    .card.featured { border-color: #0D948855; box-shadow: 0 4px 32px #0D94881a; }
+    .card-top { background: var(--dark); padding: 36px 44px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border); }
+    .card-identity { display: flex; align-items: center; gap: 20px; }
+    .card-avatar { width: 60px; height: 60px; border-radius: 50%; background: #0D948826; border: 2px solid #0D94884d; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: var(--primary); flex-shrink: 0; font-family: var(--font-heading); }
+    .card-avatar.featured-avatar { background: var(--primary); border-color: var(--primary); color: var(--dark); }
+    .card-name { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--on-dark); margin-bottom: 4px; }
+    .card-location { font-size: 14px; color: var(--on-dark-mid); display: flex; align-items: center; gap: 6px; }
+    .card-badges { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+    .badge-shortlisted { background: #0D948833; color: var(--primary); border: 1px solid #0D948866; }
+    .card-rate { text-align: right; }
+    .card-rate-amount { font-size: 24px; font-weight: 700; color: var(--primary); font-family: var(--font-heading); }
+    .card-rate-period { font-size: 11px; color: var(--on-dark-mid); text-transform: uppercase; letter-spacing: 1px; }
+    .tap-badge { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; }
+
+    .tags-row { padding: 0 44px 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { display: inline-block; padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+    .tag-filled { background: var(--tag-bg); color: var(--tag-color); }
+    .tag-filled:nth-child(3) { background: var(--highlight); color: var(--dark); }
+    .tag-outlined { background: var(--bg-subtle); color: var(--text-mid); border: 1.5px solid var(--border-strong); }
+
+    .card-body { padding: 40px 44px; color: var(--text-mid); }
+    .card-section { margin-bottom: 0; }
+    .card-section-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; margin-top: 32px; font-family: var(--font-heading); }
+    .card-section-title:first-of-type { margin-top: 0; }
+    .card-narrative { font-size: 16px; line-height: 1.85; color: var(--text-mid); margin-bottom: 32px; font-style: italic; border-left: 3px solid var(--primary); padding-left: 20px; }
+    .card-narrative strong { color: var(--text-primary); font-weight: 600; font-style: normal; }
+    .experience-list { display: flex; flex-direction: column; gap: 14px; }
+    .experience-list { display: flex; flex-direction: column; gap: 20px; }
+    .exp-item { display: flex; gap: 16px; align-items: flex-start; }
+    .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 6px; }
+    .exp-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+    .exp-line { width: 1px; flex: 1; background: #0D948833; margin-top: 6px; min-height: 30px; }
+    .exp-content { flex: 1; padding-bottom: 4px; }
+    .exp-role { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+    .exp-company { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+    .exp-highlight { font-size: 13px; color: var(--primary); margin-top: 4px; }
+    .tags-cluster { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ctag { font-size: 12px; padding: 6px 14px; border-radius: 6px; background: var(--bg-subtle); color: var(--text-mid); }
+    .ctag-key { background: #0D94881a; color: var(--primary); font-weight: 600; }
+    .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .fit-item { background: var(--bg-subtle); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-strong); overflow: visible; word-wrap: break-word; }
+    .fit-label { font-size: 12px; color: var(--text-mid); line-height: 1.5; display: block; overflow: visible; white-space: normal; }
+    .strength-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+    .bar-item { display: flex; flex-direction: column; gap: 6px; }
+    .bar-label { font-size: 13px; color: var(--text-mid); }
+    .bar-track { height: 5px; background: var(--bg-subtle); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--highlight)); border-radius: 3px; transition: width 1.5s ease; }
+    .card-actions { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+    .video-intro-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: transparent; border: 1.5px solid var(--primary); border-radius: 6px; color: var(--primary); font-size: 13px; font-weight: 600; letter-spacing: 0.3px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+    .video-intro-btn:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
+
+    .experience-item { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .exp-dates { font-size: 12px; color: var(--text-light); white-space: nowrap; }
+
+    .strength-list { padding-left: 18px; }
+    .strength-list li { font-size: 14px; color: var(--text-mid); margin-bottom: 8px; line-height: 1.6; }
+
+    .card-footer { display: flex; align-items: center; justify-content: space-between; padding: 16px 44px; background: var(--bg-subtle); border-top: 1px solid var(--border); }
+    .footer-note { font-size: 13px; color: var(--text-light); }
+    .footer-note strong { color: var(--text-primary); }
+    .btn-group { display: flex; gap: 8px; }
+    .btn-card { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 8px; font-family: var(--font-heading); font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.15s; cursor: pointer; }
+    .btn-outline { background: var(--bg-card); color: var(--primary); border: 1.5px solid var(--primary); }
+    .btn-outline:hover { background: var(--tag-bg); }
+    .btn-primary-card { background: var(--primary); color: white; border: 1.5px solid var(--primary); }
+    .btn-primary-card:hover { background: var(--primary-dark); }
+    .btn-card svg { width: 15px; height: 15px; }
+    .btn-tap { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; }
+
+    .card-recruiter-note { margin: 0; padding: 16px 20px; }
+    .card-recruiter-note .recruiter-note-title { font-family: var(--font-heading); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); margin-bottom: 8px; }
+    .card-recruiter-note p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+    .comparison-section { max-width: 1100px; margin: 20px auto 40px; padding: 0 40px; }
+    .comparison-table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+    .comparison-table { width: 100%; border-collapse: collapse; background: var(--bg-card); font-size: 13px; color: var(--text-mid); border-radius: 12px; overflow: hidden; }
+    .comparison-table thead th { background: var(--dark); color: var(--primary); padding: 14px 16px; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .comparison-table thead th:first-child { border-radius: 14px 0 0 0; }
+    .comparison-table thead th:last-child { border-radius: 0 14px 0 0; }
+    .comparison-table tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody tr:hover { background: var(--bg-card-hover); }
+    .comparison-table .highlight-cell { background: #0D94881a; font-weight: 600; color: var(--primary); }
+
+    .advisor-section { max-width: 1100px; margin: 0 auto 40px; padding: 0 40px; }
+    .advisor-card { display: flex; gap: 24px; background: var(--bg-card); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+    .advisor-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); flex-shrink: 0; }
+    .advisor-info { flex: 1; }
+    .advisor-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 4px; }
+    .advisor-name { font-family: var(--font-heading); font-size: 20px; font-weight: 800; color: var(--text-primary); }
+    .advisor-role { font-size: 13px; color: var(--text-light); margin-bottom: 10px; }
+    .advisor-summary { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+    .site-footer { text-align: center; padding: 32px; color: var(--on-dark-light); font-size: 13px; border-top: 1px solid var(--on-dark-muted); background: var(--dark); }
+    .footer-logos { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 12px; }
+    .footer-logos img { height: 24px; opacity: 0.6; }
+    .footer-x { font-size: 18px; color: var(--border); }
+    .site-footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 48px 20px 40px; }
+      .card-top { flex-direction: column; padding: 24px; gap: 16px; }
+      .card-body { padding: 24px; }
+      .candidate-card { padding: 0 16px; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .strength-bars { grid-template-columns: 1fr; }
+      .advisor-card { flex-direction: column; text-align: center; }
+      .comparison-table { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-header">
+    <div class="header-inner">
+      <a class="header-brand" href="https://summitpoolworks.com/" target="_blank">
+        <img src="https://www.google.com/s2/favicons?domain=summitpoolworks.com&amp;sz=128" alt="Summit Pool Works" style="height:28px;" />
+        <div class="header-divider"></div>
+        <span class="header-title">Summit Pool Works</span>
+      </a>
+      <div class="header-sagan">
+        <span>Powered by</span>
+        <img src="https://saganrecruitment.com/wp-content/uploads/2025/10/Sagan-Logo-2-e1759568299542.png" alt="Sagan" style="height:20px;" />
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-eyebrow">White Glove Talent Search</div>
+    <h1>Administrative Assistant Candidates</h1>
+    <p class="hero-sub">Curated talent for Summit Pool Works. Each candidate has been vetted and matched to your specific needs.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <strong>5</strong> Candidates
+      </div>
+      <div class="hero-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <strong>Batch 1</strong> &middot; April 27, 2026
+      </div>
+      <div class="hero-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Advisor: <strong>Guillermo Lindo</strong>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="intro-note">
+    <div class="intro-card">
+      <p>Hi Cameron,</p><p></p><p>I've loaded your first batch of administrative assistant candidates into the review portal for you to check out. I specifically selected highly proactive communicators with the sales experience needed to jump right in and manage your fast-moving pool leads and CRM updates. Just take a look at their video intros and my notes, and let me know what you think as soon as possible so we can start setting up interviews or quickly fine-tune our search.</p>
+    </div>
+  </div>
+
+  <div class="batch-info">
+    <div class="batch-pill">
+      <span class="batch-num">Batch 1</span>
+      April 27, 2026
+    </div>
+  </div>
+
+  <div class="section-label">
+    <h2>Candidate Profiles</h2>
+    <p>Each candidate has been carefully selected and evaluated for this role.</p>
+  </div>
+
+  <div class="batch-switcher" id="batch-switcher" data-count="1">
+    <button class="batch-btn active" onclick="showBatch(1)" data-batch="1">
+      <span>Batch 1</span>
+      <span class="batch-count">5</span>
+    </button>
+  </div>
+
+  <div id="batch-1" class="batch-panel">
+    <div class="candidates">
+      
+    <div class="candidate-card">
+      <div class="card featured" id="candidate-0">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar featured-avatar">JW</div>
+            <div>
+              <div class="card-name">Jaivion W.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Jamaica &middot; 3 yrs Customer Service
+              </div>
+              <div class="card-badges">
+                <span class="badge badge-shortlisted">★ TAP Certified</span>
+                <span class="badge badge-shortlisted">Pre-Shortlisted</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$1,200/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Jaivion is the polished communicator in this batch. He's lived in high-volume customer environments where every call matters. The retention numbers with elderly customers show he can build rapport fast. Your cheat code for turning leads into loyal pool clients.
+          </div>
+
+          
+          <div class="card-section-title">Experience Highlights</div>
+          <div class="experience-list">
+            
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Customer Service and Retention Specialist</div>
+                <div class="exp-company">Audien Hearing &middot; 10/2025 - Present</div>
+                <div class="exp-highlight">Handle 30-40 inquiries a day through email, inbound and outbound calls on a ticket-by-ticket basis using CRMs(Aircall, Kustomer, Zendesk, Chargebee, Sterndesk and Shopify)</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Billing And Sales Specialist</div>
+                <div class="exp-company">Optimum &middot; 02/2024 - 10/2025</div>
+                <div class="exp-highlight">Handled billing inquires such as service adjustments, price increases, extension requests and payments through inbound calls and live chat while.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Customer Service Specialist</div>
+                <div class="exp-company">FedEx &middot; 08/2022 - 02/2024</div>
+                <div class="exp-highlight">Handled over 65-100 inbound and outbound calls daily utilizing CRM software(Salesforce) and other internal tools to schedule appointments, track orders and submit service tickets.</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Salesforce</span><span class="ctag ctag-key">Zendesk</span><span class="ctag ctag-key">Aircall</span><span class="ctag ctag-key">Appointment Setting</span><span class="ctag ctag-key">Lead Generation</span>
+            <span class="ctag">Client Retention</span>
+          </div>
+
+          
+          <div class="card-section-title">Summit Pool Works Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">85% first-call resolution rate → Pool industry requires 'first to answer' response to secure clients</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Salesforce + multi-CRM experience → Cameron needs someone to independently manage the CRM system</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">60% retention rate with customers → Summit Pool Works needs to convert leads into long-term service contracts</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Lead Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">CRM Systems</div>
+              <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Appointment Setting</div>
+              <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Data Entry</div>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Sales Skills</div>
+              <div class="bar-track"><div class="bar-fill" style="width:87%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1mhw67YTMFO_-ugwzn4diSbKkZipPr6Sf/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1lvb0EWiOoIzbKKFGXN0IiuDjdGYOZdHC/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>TAP Info</a>
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Jaivion brings genuine horsepower in the exact skills Cameron needs most: lead management and client retention. His 85% first-call resolution at FedEx proves he can handle the 'first to answer' pressure of the pool industry. The 60% retention rate with elderly customers at Audien Hearing shows he can build trust quickly over the phone. Most importantly, he's already fluent in Salesforce and multi-CRM workflows, so he'll hit the ground running on day one. At $1,200/month, he's the wallet-friendly pick who delivers enterprise-grade customer service skills.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidate-card">
+      <div class="card" id="candidate-1">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar">DS</div>
+            <div>
+              <div class="card-name">Danielle S.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Jamaica &middot; Administrative Support
+              </div>
+              <div class="card-badges">
+                <span class="badge badge-shortlisted">★ TAP Certified</span>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$1,200/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Danielle is the budget-smart pick that doesn't cut corners on quality. TAP verification means she's already proven herself. Caribbean professionals bring that natural warmth clients love. More than meets the eye at this price point.
+          </div>
+
+          
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Administrative Support</span><span class="ctag ctag-key">Communication</span><span class="ctag ctag-key">US Business Hours</span>
+            
+          </div>
+
+          
+          <div class="card-section-title">Summit Pool Works Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">TAP-verified communication quality → Cameron needs exceptional soft skills for first-level client contact</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Perfect US business hours availability → Pool leads require 'first to answer' response during 8AM-4PM CST</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Budget-friendly $1200/month rate → Leaves room in $2500 budget for future specialized hires as company scales</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Administrative Support</div>
+              <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">CRM Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Lead Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Calendar Scheduling</div>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Budget Value</div>
+              <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1pEDgc8NvlPNl_s1pR8UBjlZ9ovlsA0qe/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1lvb0EWiOoIzbKKFGXN0IiuDjdGYOZdHC/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>TAP Info</a>
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Danielle represents the sweet spot between cost and capability that Cameron needs right now. At $1200/month, she's the most wallet-friendly option while still bringing TAP-verified quality. Jamaica-based talent typically has excellent English fluency and cultural alignment with US business practices. Her administrative support background positions her well for the CRM management, lead tracking, and client communication Cameron desperately needs. The time zone alignment is perfect for those critical 8AM-4PM CST hours when pool service leads come in hot. This is the calculated risk worth taking for a 3-month-old company that needs to stretch every dollar while building the foundation for aggressive growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidate-card">
+      <div class="card" id="candidate-2">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar">GB</div>
+            <div>
+              <div class="card-name">Grace B.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Philippines &middot; Administrative roles
+              </div>
+              <div class="card-badges">
+                <span class="badge badge-shortlisted">★ TAP Certified</span>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$1,800/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Grace is the Swiss Army knife pick in this batch. She's got the full admin toolkit Cameron needs right now. Philippines timezone alignment means better CST coverage than other locations. The calculated risk worth taking for someone who can handle multiple workstreams.
+          </div>
+
+          
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Client Communication</span><span class="ctag ctag-key">Administrative Support</span><span class="ctag ctag-key">Data Management</span><span class="ctag ctag-key">Email Management</span><span class="ctag ctag-key">Calendar Scheduling</span>
+            <span class="ctag">CRM Systems</span>
+          </div>
+
+          
+          <div class="card-section-title">Summit Pool Works Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">CRM Systems experience → Can immediately manage QuickBooks and incoming leads from Google Voice/Angie's List</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Email Management + Calendar Scheduling → Takes over the daily admin bottlenecks preventing Cameron's strategic focus</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Client Communication expertise → Perfect first-level filter for Indeed applicants and lead qualification</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Administrative Support</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Email Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Calendar Scheduling</div>
+              <div class="bar-track"><div class="bar-fill" style="width:87%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">CRM Systems</div>
+              <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Data Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1ZzBjtcDf3cX6uDVuIvt1leMnWBMwALwk/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1lvb0EWiOoIzbKKFGXN0IiuDjdGYOZdHC/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>TAP Info</a>
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Grace brings the most complete administrative skill set in this batch. Her CRM Systems experience directly addresses Cameron's QuickBooks and lead management pain points. Email Management and Calendar Scheduling skills mean she can immediately take over the daily admin bottlenecks drowning Cameron. Client Communication expertise positions her perfectly as the first-level filter for Indeed applicants and incoming leads from Angie's List. At $1800/month, she's mid-tier pricing but delivers heavyweight capabilities. Philippines timezone provides better CST alignment than other offshore locations. The trade-off is higher cost than budget options, but you get genuine horsepower across multiple skill areas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidate-card">
+      <div class="card" id="candidate-3">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar">LP</div>
+            <div>
+              <div class="card-name">Luis P.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Costa Rica &middot; Administrative support experience
+              </div>
+              <div class="card-badges">
+                <span class="badge badge-shortlisted">★ TAP Certified</span>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$1,800/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Luis is the grounded professional in this batch. Costa Rica location gives you true CST business hours coverage when those Angie's List leads come in. TAP verification means his communication skills are already vetted. The adult in the room for daily operations.
+          </div>
+
+          
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Customer service</span><span class="ctag ctag-key">Lead management</span><span class="ctag ctag-key">Administrative tasks</span><span class="ctag ctag-key">Communication</span>
+            
+          </div>
+
+          
+          <div class="card-section-title">Summit Pool Works Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">Costa Rica CST timezone → Perfect overlap for Cameron's 8AM-4PM business hours requirement</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Lead management experience → Handles incoming Google Voice and Angie's List leads that need 'first to answer' response</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">TAP verified communication → Proven soft skills for acting as first-level filter for job applicants and client scheduling</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Lead Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Administrative Tasks</div>
+              <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">CRM Systems</div>
+              <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Timezone Coverage</div>
+              <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Customer Service</div>
+              <div class="bar-track"><div class="bar-fill" style="width:87%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/15ZnvMsDiRl2V_Aj7jZ04r1b8d4zL5tBM/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1lvb0EWiOoIzbKKFGXN0IiuDjdGYOZdHC/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>TAP Info</a>
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Luis brings the timezone advantage no other candidate can match. When Cameron gets that 9AM lead from Google Voice or Angie's List, Luis is already at his desk, not waking up or finishing dinner. His administrative support experience covers exactly what Summit needs right now: lead management, client communication, and handling the daily tasks drowning Cameron. Costa Rica professionals are known for their customer service foundation, which matters when you're competing for pool clients who expect fast responses. At $1800, he's priced fairly but leaves budget headroom for the future social media manager Cameron will need. The trade-off: less specialized recruiting experience than some candidates, but his communication skills and timezone alignment make up for it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidate-card">
+      <div class="card" id="candidate-4">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar">MA</div>
+            <div>
+              <div class="card-name">Maria Alice A.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Brazil &middot; Administrative support background
+              </div>
+              <div class="card-badges">
+                <span class="badge badge-shortlisted">★ TAP Certified</span>
+                
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$1,300/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Maria Alice is the nimble starter pick in this batch. Brazil location gives Cameron the CST coverage he desperately needs when Angie's List leads come in. TAP verification removes the communication risk. Room in the budget to add that social media manager next.
+          </div>
+
+          
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Administrative support</span><span class="ctag ctag-key">Communication</span><span class="ctag ctag-key">TAP verified</span>
+            
+          </div>
+
+          
+          <div class="card-section-title">Summit Pool Works Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">Brazil CST timezone alignment → Perfect coverage for 8AM-4PM when pool leads come through Google Voice</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">TAP verified communication → No risk on client calls, exactly what Cameron needs for Angie's List interactions</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">$1300/month rate → Leaves $1200 budget room for Cameron's planned social media hire next month</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Administrative Support</div>
+              <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">CRM Management</div>
+              <div class="bar-track"><div class="bar-fill" style="width:65%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Lead Response</div>
+              <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Calendar Scheduling</div>
+              <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Budget Value</div>
+              <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/16aTxc5gg-bvIssNCGKJ4v90SkfXHIlvj/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            <a class="video-intro-btn" href="https://drive.google.com/file/d/1lvb0EWiOoIzbKKFGXN0IiuDjdGYOZdHC/view" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>TAP Info</a>
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Maria Alice is the smart foundation play for Summit's growth trajectory. At $1300/month, she's the most budget-conscious option that still delivers on Cameron's core requirements. Brazil's timezone alignment means she'll be online exactly when those first-to-answer pool leads hit Google Voice and email. TAP verification takes the guesswork out of communication skills. The trade-off? Less specific experience than the pricier candidates. But for a 3-month-old company backed by private equity, she's the calculated risk that preserves budget for future hires while solving the immediate administrative bottleneck.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+  <div class="comparison-section">
+    <div class="section-label" style="padding-bottom:20px;">
+      <h2>Side-by-Side Comparison</h2>
+      <p>Key criteria at a glance to help you prioritize interviews.</p>
+    </div>
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Jaivion W.</th><th>Danielle S.</th><th>Grace B.</th><th>Luis P.</th><th>Maria Alice A.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Location</strong></td><td>Jamaica</td><td>Jamaica</td><td>Philippines</td><td>Costa Rica</td><td>Brazil</td></tr>
+          <tr><td><strong>Experience</strong></td><td>3 yrs Customer Service</td><td>Administrative Support</td><td>Administrative roles</td><td>Administrative support experience</td><td>Administrative support background</td></tr>
+          <tr><td><strong>Key Employers</strong></td><td>Audien Hearing, Optimum, FedEx</td><td>See profile</td><td>See profile</td><td>See profile</td><td>See profile</td></tr>
+          <tr><td><strong>Core Strength</strong></td><td>Salesforce, Zendesk, Aircall</td><td>Administrative Support, Communication, US Business Hours</td><td>Client Communication, Administrative Support, Data Management</td><td>Customer service, Lead management, Administrative tasks</td><td>Administrative support, Communication, TAP verified</td></tr>
+          <tr><td><strong>HRIS / Tools</strong></td><td>Salesforce, Zendesk, Aircall, Appointment Setting, Lead Generation</td><td>Administrative Support, Communication, US Business Hours</td><td>Client Communication, Administrative Support, Data Management, Email Management, Calendar Scheduling</td><td>Customer service, Lead management, Administrative tasks, Communication</td><td>Administrative support, Communication, TAP verified</td></tr>
+          <tr><td><strong>Languages</strong></td><td>English</td><td>English</td><td>English</td><td>English</td><td>English</td></tr>
+          <tr><td><strong>Education</strong></td><td>See profile</td><td>See profile</td><td>See profile</td><td>See profile</td><td>See profile</td></tr>
+          <tr><td><strong>Rate</strong></td><td class="highlight-cell">$1,200/mo</td><td class="highlight-cell">$1,200/mo</td><td>$1,800/mo</td><td>$1,800/mo</td><td>$1,300/mo</td></tr>
+          <tr><td><strong>TAP</strong></td><td><span style="color:var(--primary);font-weight:700;">Yes ★</span></td><td><span style="color:var(--primary);font-weight:700;">Yes ★</span></td><td><span style="color:var(--primary);font-weight:700;">Yes ★</span></td><td><span style="color:var(--primary);font-weight:700;">Yes ★</span></td><td><span style="color:var(--primary);font-weight:700;">Yes ★</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+
+  <div class="advisor-section">
+    <div class="section-label" style="padding-bottom:20px;">
+      <h2>Your Talent Advisor</h2>
+    </div>
+    <div class="advisor-card">
+      <img class="advisor-avatar" src="https://saganrecruitment.com/wp-content/uploads/2026/01/Guillermo.png" alt="Guillermo Lindo" />
+      <div class="advisor-info">
+        <div class="advisor-label">White Glove Talent Advisor</div>
+        <div class="advisor-name">Guillermo Lindo</div>
+        <div class="advisor-role">Sagan · White Glove Hirings — Talent Advisor</div>
+        <p class="advisor-summary">Guillermo serves as a Talent Advisor at Sagan, where he connects skilled candidates with opportunities that allow them to grow and succeed. Driven by a passion for creating access and meaningful career pathways, he takes pride in helping professionals find the right platform to shine while delivering exceptional talent to Sagan's clients.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logos">
+      <img src="https://www.google.com/s2/favicons?domain=summitpoolworks.com&sz=128" alt="Summit Pool Works" style="height:24px;" onerror="this.style.display='none'" />
+      <span class="footer-x">&times;</span>
+      <img src="https://saganrecruitment.com/wp-content/uploads/2025/10/Sagan-Logo-2-e1759568299542.png" alt="Sagan" />
+    </div>
+    <p>Prepared by <a href="https://getsagan.com" target="_blank">Sagan</a> for Summit Pool Works &middot; Administrative Assistant Search &middot; April 27, 2026</p>
+  </footer>
+
+  <script>
+    function showBatch(n) {
+      document.querySelectorAll('.batch-panel').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.batch-btn').forEach(b => b.classList.remove('active'));
+      var panel = document.getElementById('batch-' + n);
+      var btn = document.querySelector('[data-batch="' + n + '"]');
+      if (panel) panel.classList.remove('hidden');
+      if (btn) btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
